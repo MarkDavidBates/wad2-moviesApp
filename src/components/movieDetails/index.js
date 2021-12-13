@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from "../movieReviews";
 import MovieCredits from "../movieCredits";
+import { getMovieVideos } from "../../api/tmdb-api";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,6 +41,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawer2Open, setDrawer2Open] = useState(false);
+  const [videos, setVideos] = useState([]);
 
   return (
     <>
@@ -81,6 +83,24 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           <li key={pc.name}>
             <Chip label={pc.name} className={classes.chip} />
           </li>
+        ))}
+      </Paper>
+      <Paper component="ul" className={classes.root}>
+        <li>
+          <Chip label="Languages" className={classes.chip} color="primary" />
+        </li>
+        {movie.spoken_languages.map((sl) => (
+          <li key={sl.name}>
+            <Chip label={sl.name} className={classes.chip} />
+          </li>
+        ))}
+      </Paper>
+      <Paper component="ul" className={classes.root} key={videos.key}>
+        {videos.map((v) => (
+          <video width="320" height="240" controls>
+            <source src="movie.mp4" type="video/mp4">
+            </source>
+          </video>
         ))}
       </Paper>
 
