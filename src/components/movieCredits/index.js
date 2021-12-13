@@ -27,6 +27,8 @@ export default function MovieCredits({ movie }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  console.log(getMovieCredits);
+
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="credits table">

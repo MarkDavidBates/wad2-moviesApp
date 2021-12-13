@@ -96,12 +96,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         ))}
       </Paper>
       <Paper component="ul" className={classes.root} key={videos.key}>
-        {videos.map((v) => (
-          <video width="320" height="240" controls>
-            <source src="movie.mp4" type="video/mp4">
-            </source>
-          </video>
-        ))}
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </Paper>
 
       <Fab

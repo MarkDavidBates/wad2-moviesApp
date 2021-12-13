@@ -112,7 +112,7 @@ export const getUpcomingMovies = () => {
       });
   };
  
-  export const getMovieVideos = ({ queryKey }) => {
+  /**export const getMovieVideos = ({ queryKey }) => {
     const [, idPart] = queryKey;
     const { id } = idPart;
     return fetch(
@@ -127,4 +127,15 @@ export const getUpcomingMovies = () => {
     .catch((error) => {
       throw error
    });
+  };**/
+
+  export const getMovieVideos = (id) => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json.results);
+        return json.results;
+      });
   };
