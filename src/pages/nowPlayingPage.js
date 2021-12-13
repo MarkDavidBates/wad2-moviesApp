@@ -5,8 +5,8 @@ import Spinner from '../components/spinner'
 import {getMoviesPlayingNow} from '../api/tmdb-api'
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 
-const HomePage = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('discover', getMoviesPlayingNow)
+const NowPlayingPage = (props) => {
+  const {  data, error, isLoading, isError }  = useQuery('now playing', getMoviesPlayingNow)
 
   if (isLoading) {
     return <Spinner />
