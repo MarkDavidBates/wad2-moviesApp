@@ -110,7 +110,7 @@ export const getPopularMovies = () => {
     )
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json.results);
+        console.log(json.results);
         return json.results;
       });
   };
@@ -121,7 +121,7 @@ export const getPopularMovies = () => {
     )
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json.results);
+        console.log(json.results);
         return json.results;
       });
   };
