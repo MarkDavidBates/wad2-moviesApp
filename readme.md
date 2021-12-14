@@ -22,8 +22,6 @@ This repository contains the code from the ReactJS labs completed during Web App
 
 ### Routing.
 
-[ List the __new routes__ supported by your app and state the associated page.]
-
 + /credits - displays all credited people in the movie.
 + /credits/:id/character - display the name of the character in the credits page
 + /credits/:id/name - display the name of the people credited in the credits page
