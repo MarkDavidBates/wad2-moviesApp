@@ -9,6 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { getMovieCredits } from "../../api/tmdb-api";
 import { excerpt } from "../../util";
+import { useQuery } from "react-query";
 
 const useStyles = makeStyles({
   table: {
@@ -19,6 +20,10 @@ const useStyles = makeStyles({
 export default function MovieCredits({ movie }) {
   const classes = useStyles();
   const [credit, setCredits] = useState([]);
+  const { data , error, isLoading, isError } = useQuery(
+    ["credits", { id: movie.id }],
+    getMovieCredits
+  );
 
   useEffect(() => {
     getMovieCredits(movie.id).then((credits) => {
@@ -39,12 +44,12 @@ export default function MovieCredits({ movie }) {
           </TableRow>
         </TableHead>
         <TableBody>
-            {credit.map((c) => (
-                <TableRow key={c.id}>
+            {credit.map((credits) => (
+                <TableRow key={credits.id}>
                     <TableCell component="th" scope="row">
-                        {c.name}
+                        {credits.name}
                     </TableCell>
-                    <TableCell >{excerpt(c.character)}</TableCell>
+                    <TableCell >{excerpt(credits.character)}</TableCell>
                 </TableRow>
             ))}
         </TableBody>

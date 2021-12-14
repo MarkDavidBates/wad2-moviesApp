@@ -12,6 +12,7 @@ import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from "../movieReviews";
 import MovieCredits from "../movieCredits";
 import { getMovieVideos } from "../../api/tmdb-api";
+import { useQuery } from "react-query";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +43,10 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawer2Open, setDrawer2Open] = useState(false);
   const [videos, setVideos] = useState([]);
+  const { data , error, isLoading, isError } = useQuery(
+    ["videos", { id: movie.id }],
+    getMovieVideos
+  );
 
   return (
     <>
