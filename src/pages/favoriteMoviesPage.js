@@ -6,8 +6,10 @@ import { getMovie } from "../api/tmdb-api";
 import Spinner from '../components/spinner'
 import RemoveFromFavorites from "../components/cardIcons/removeFromFavorites";
 import WriteReview from "../components/cardIcons/writeReview";
+import { AuthContext } from "../contexts/authContext";
 
 const FavoriteMoviesPage = () => {
+  const {favorites} = useContext(AuthContext)
   const {favorites: movieIds } = useContext(MoviesContext);
 
   // Create an array of queries and run in parallel.
@@ -26,12 +28,12 @@ const FavoriteMoviesPage = () => {
     return <Spinner />;
   }
   const movies = favoriteMovieQueries.map((q) => q.data);
-  const toDo = () => true;
+  const toDo = () => true; 
 
   return (
     <PageTemplate
       title="Favorite Movies"
-      movies={movies}
+      movies={favorites}
       action={(movie) => {
         return (
           <>

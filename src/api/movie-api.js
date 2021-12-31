@@ -43,3 +43,27 @@ export const getMovies = () => {
       throw error
    });
   };
+
+  export const addFavouriteMovie = (username,id) => {
+      return fetch(`/api/users/${username}/favourites`, {
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          method: 'post',
+          body: JSON.stringify({username: username, id: id})
+      }).then(res => res.json())
+  };
+
+export const getFavouriteMovies = (username) => {
+    return fetch(
+        `/api/users/${username}/favourites`
+    ).then((response) => {
+        if (response.ok){
+            throw new Error(response.json().message);
+        }
+        return response.json()
+    })
+    .catch((error) => {
+        throw error
+    });
+}
