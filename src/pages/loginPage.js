@@ -21,6 +21,13 @@ const LoginPage = props => {
   }
   return (
     <>
+    <style>
+        .center{
+        
+        }
+    </style>
+    <center>
+    <div class = "container">
       <h2>Login page</h2>
       <p>You must log in to view the protected pages </p>
       <input id="username" placeholder="user name" onChange={e => {
@@ -30,9 +37,11 @@ const LoginPage = props => {
         setPassword(e.target.value);
       }}></input><br />
       {/* Login web form  */}
-      <button onClick={login}>Log in</button>
+      <button onClick={login} variant="outlined" size="medium" color="primary">Log in</button>
       <p>Not Registered?
       <Link to="/signup">Sign Up!</Link></p>
+    </div>
+    </center>
     </>
   );
 };
