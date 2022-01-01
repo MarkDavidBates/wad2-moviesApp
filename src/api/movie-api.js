@@ -58,9 +58,9 @@ export const getFavouriteMovies = (username) => {
     return fetch(
         `/api/users/${username}/favourites`
     ).then((response) => {
-        if (response.ok){
-            throw new Error(response.json().message);
-        }
+        //if (response.ok){
+        //    throw new Error(response.json().message);
+        //}
         return response.json()
     })
     .catch((error) => {

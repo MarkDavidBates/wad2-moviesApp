@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
+import { AuthContext } from "../../contexts/authContext";
 import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import { AuthContext } from "../../contexts/authContext";
+
 
 const AddToFavoritesIcon = ({ movie }) => {
   const context = useContext(MoviesContext);
@@ -11,7 +12,7 @@ const AddToFavoritesIcon = ({ movie }) => {
   const handleAddToFavorites = (e) => {
     e.preventDefault();
     context.addToFavorites(movie);
-    authContext.addToFavorites(movie);
+    authContext.addToFavourites(movie);
   };
   return (
     <IconButton aria-label="add to favorites" onClick={handleAddToFavorites}>
