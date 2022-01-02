@@ -21,7 +21,7 @@ REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON G
 
 before running the api, be sure to create a .env file in the root folder for any required information such as below, ie:
 ​
-###Web api labs .env
+### Web api labs .env
 ```bat
 NODE_ENV=development
 PORT=8080
@@ -32,7 +32,7 @@ SECRET=yourJWTSecretHere
 TMDB_KEY=YourTMDBKeyHere
 ```
 
-###Web App .env
+### Web App .env
 ```bat
 TMDB_KEY=YourTMDBKeyHere
 FAST_REFRESH=false
@@ -46,7 +46,6 @@ SKIP_PREFLIGHT_CHECK=true
 | /api/movies | Gets a list of movies
 | /api/movies/popular | Get a list of popular movies
 | /api/movies/playing | Gets a list of movies now playing in cinemas  
-| ... | ... | ... | ... | ...
 ​
 ## Security and Authentication
 protected routes are implemented onto the favourites page of the web app. When a user tries to access it, it will redirect them to a login page where they will have to ligin with a valid username and password to access the page.
