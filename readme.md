@@ -11,6 +11,9 @@ Name: Mark Bates
 ​
 This app uses the git repository form the web api labs along with this repository. Due to difficulties implementing both into one, this will require the download of both repositories running simultaniously in seperate windows (in VS Code) for the app to work.
 
+link to web-api labs repository:
+https://github.com/MarkDavidBates/web-app-labs/tree/master
+
 To get the necessary data from the TMDB Database, you will require a TMDB key to access this.
 
 You ay also need to download mongoDB on your device if you have not already done so.
